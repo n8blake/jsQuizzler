@@ -1,3 +1,7 @@
 .list-group-item>b {
   margin-right: 10pt;
 }
+
+button:has(> svg) {
+	display: none;
+}
