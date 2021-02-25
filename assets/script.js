@@ -13,15 +13,28 @@ function getQuestions(){
 
 var currentQuestion = 0;
 
+let countingDown = true;
+
 const start = async () => {
 	await getQuestions();
-	//console.log(QUESTIONS[0].idx);
+	console.log(QUESTIONS.length);
 	updateDOM();
 }
 
+const end = () => {
+	countingDown = false;
+	clearInterval(timerInterval);
+}
+
 var nextQuestion = function(){
-	currentQuestion++;
-	updateDOM();
+	currentQuestion = currentQuestion + 1;
+	console.log(currentQuestion);
+
+	if(currentQuestion < QUESTIONS.length){
+		updateDOM();
+	} else {
+		end();
+	}
 }
 
 var previousQuestion = function(){
