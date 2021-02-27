@@ -1,0 +1,45 @@
+.list-group-item>b {
+  margin-right: 10pt;
+}
+
+button:has(> svg) {
+	display: none;
+}
+
+.pulse-red {
+	animation: pulseRed 0.5s;
+}
+
+@keyframes pulseRed {
+	0% {
+		color: #000000;
+	}
+	10% {
+		color: #dc3545;
+	}
+	90% {
+		color: #dc3545;
+	}
+	100% {
+		color: #000000;
+	}
+}
+
+.pulse-green {
+	animation: pulseGreen 0.5s;
+}
+
+@keyframes pulseGreen {
+	0% {
+		color: #000000;
+	}
+	10% {
+		color: #28a745;
+	}
+	90% {
+		color: #28a745;
+	}
+	100% {
+		color: #000000;
+	}
+}
