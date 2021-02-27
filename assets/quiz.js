@@ -9,9 +9,7 @@ function select(event){
 	answers.forEach(li => {
 		li.removeEventListener('click', select);
 	});
-	//event.target.classList.add('active');
-	
-	console.log(check(event.target.dataset.questionIndex, event.target.dataset.optionIndex));
+	//console.log(check(event.target.dataset.questionIndex, event.target.dataset.optionIndex));
 	if(check(event.target.dataset.questionIndex, event.target.dataset.optionIndex)){
 		event.target.classList.add('bg-success');
 		timeDiv.classList.add('pulse-green');
@@ -26,22 +24,6 @@ function select(event){
 	
 	time = setTimeout(goToNextQuestion, 500);
 
-	/*timeDiv.addEventListener('animationend', () => {
-		//go to next question
-		console.log("next");
-		if(countingDown){
-			try {
-				nextQuestion();
-			} catch (err) {
-				console.log(err);
-			}
-			
-			//console.log('next question');
-			timeDiv.classList.remove('pulse-green');
-			timeDiv.classList.remove('pulse-red');
-		}
-	});*/
-
 }
 
 const goToNextQuestion = () => {
@@ -49,6 +31,24 @@ const goToNextQuestion = () => {
 	timeDiv.classList.remove('pulse-green');
 	timeDiv.classList.remove('pulse-red');
 }
+
+const shuffleQuestions = () => {
+	let array = QUESTIONS;
+	var currentIndex = array.length, temporaryValue, randomIndex;
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+}
+
 
 // Given a question number and an option,
 // return if that option is the correct
