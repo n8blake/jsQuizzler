@@ -5,9 +5,9 @@ let correct = 0;
 function select(event){
 	//console.log(event.target.dataset);
 	questionCount++;
+	document.querySelector("#number-total").textContent = questionCount;
 	answers.forEach(li => {
 		li.removeEventListener('click', select);
-
 	});
 	//event.target.classList.add('active');
 	
@@ -17,6 +17,7 @@ function select(event){
 		timeDiv.classList.add('pulse-green');
 		timeLeft += 2000;
 		correct++;
+		document.querySelector("#number-correct").textContent = correct;
 	} else {
 		event.target.classList.add('bg-danger');
 		timeDiv.classList.add('pulse-red');
