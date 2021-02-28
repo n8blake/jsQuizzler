@@ -1,5 +1,5 @@
-.list-group-item>b {
-  margin-right: 10pt;
+.list-group-item+.list-group-item{
+  border-top-width: 1pt;
 }
 
 button:has(> svg) {
@@ -42,4 +42,16 @@ button:has(> svg) {
 	100% {
 		color: #000000;
 	}
+}
+
+#scores {
+	display: block;
+}
+
+#quiz {
+	display: none;
+}
+
+#score-form {
+	display: none;
 }
