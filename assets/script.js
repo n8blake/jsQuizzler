@@ -54,6 +54,7 @@ const end = () => {
 	document.querySelector("#time-div").textContent = "Game Over!";
 	document.querySelector("#quiz").style.display = "none";
 	document.querySelector("#scores").style.display = "block";
+	document.querySelector("#score-form").style.display = "block";
 }
 
 const nextQuestion = () => {
